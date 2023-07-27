@@ -1,0 +1,7 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "SOLevel_", menuName = "ScriptableObjects/Level", order = 2)]
+public class SOLevel : ScriptableObject
+{
+    public SOSequence[] levelSequences;
+}
