@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6368134330313547079}
   - component: {fileID: 4275012596702832052}
   - component: {fileID: 6751043256071298502}
+  - component: {fileID: -7588516503992550623}
   - component: {fileID: 121849737547892599}
   m_Layer: 0
   m_Name: Mosca1
@@ -157,7 +158,7 @@ MonoBehaviour:
   disparoPrefab: {fileID: 4768375823640022962, guid: e5289c24989bd004580816699a57d16b, type: 3}
   puntoDisparo: {fileID: 4614083727680068669}
   velocidadDisparo: 5
-  tiempoEntreDisparos: 3
+  tiempoEntreDisparos: 1
   fuerzaMovimiento: 3
   tiempoCambioDireccion: 2
   anim: {fileID: 6368134330313547079}
@@ -177,6 +178,19 @@ CapsuleCollider2D:
   m_Offset: {x: 1.209771, y: 5.462793}
   m_Size: {x: 38.645565, y: 15.420718}
   m_Direction: 1
+--- !u!114 &-7588516503992550623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932137509964483295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e653df427b4451b43909465508b7da26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 2
 --- !u!50 &121849737547892599
 Rigidbody2D:
   serializedVersion: 4

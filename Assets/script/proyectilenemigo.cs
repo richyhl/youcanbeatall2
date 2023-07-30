@@ -4,25 +4,46 @@ using UnityEngine;
 
 public class proyectilenemigo : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private Rigidbody2D proyectilRb;
-    [SerializeField] private float destroyDeay = 3f;
-    private void Awake()
+    public GameObject player;
+    public float velocidadMovimiento;
+
+    private float distancia;
+    private float tiempodestroy = 5f;
+
+    private void Start()
     {
-        proyectilRb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+        StartCoroutine(TimerDestroy());
+
     }
 
-    public void LaunchProyectile(Vector2 Direction)
-    {
-        proyectilRb.velocity = Direction * speed;
 
-    }
     private void Update()
     {
-        Destroy(gameObject, destroyDeay);
+        distancia = Vector2.Distance(transform.position, player.transform.position);
+        Vector2 direction = player.transform.position - transform.position;
+
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, velocidadMovimiento * Time.deltaTime);
     }
+
+    private IEnumerator TimerDestroy()
+    {
+        yield return new WaitForSeconds(tiempodestroy);
+        Destroy(gameObject);
+
+
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Escudo"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

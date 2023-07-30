@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4768375823640022964}
-  - component: {fileID: 3982047650865663878}
   - component: {fileID: 4768375823640022963}
   - component: {fileID: 6603746262471529578}
   - component: {fileID: 7897360664486823679}
+  - component: {fileID: 2740966577598514870}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Bala
@@ -35,20 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3982047650865663878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4768375823640022962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07e6c8de5c85d340bb02d90af374787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  destroyDeay: 2
 --- !u!212 &4768375823640022963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138,3 +124,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2740966577598514870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768375823640022962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013efe02dd068fd41a9e5ad76994415b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4768375823640022962}
+  velocidadMovimiento: 5
