@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTimeBetween: 1
   enemyToSpawn: {fileID: 4780688609945802677, guid: 4aa72ae7769a6b5448f8cc974dcff99c, type: 3}
-  amountOfEnemies: 3
+  amountOfEnemies: 5
   pathToFollow: {fileID: 4063873242512154691, guid: 1d108a9ff3b63504bad2ce2aa6d40646, type: 3}
   isLoop: 1
   waitTimeBetweenPoints: 1

@@ -156,18 +156,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private IEnumerator GameCompleted()
-    {
-        Debug.Log("Juego Terminado");
-        yield return MainGameUI.DisplayMessage("Game Finished", 3);
-        GameManager.GameFinished();
-    }
-
     private IEnumerator RunCurrentLevel()
     {
         Debug.Log("Comenzando nivel " + currentLevel);
+        playerGO.SetActive(false);
+        yield return MainGameUI.DisplayMessage(LevelMessage, 3);
         playerGO.SetActive(true);
-        yield return MainGameUI.DisplayMessage(LevelMessage, 2);
         currentSequence = 0;
         currentSequenceObject = currentLevelObject[currentSequence];
         totalSequencesInLevel = currentLevelObject.sequences.Length;
@@ -196,5 +190,12 @@ public class LevelManager : MonoBehaviour
     internal static void DroneKilled()
     {
         EnemiesDestroyed++;
+    }
+
+    internal static IEnumerator GameCompleted()
+    {
+        Debug.Log("Juego Terminado");
+        yield return MainGameUI.DisplayMessage("Game Finished", 3);
+        GameManager.GameFinished();
     }
 }

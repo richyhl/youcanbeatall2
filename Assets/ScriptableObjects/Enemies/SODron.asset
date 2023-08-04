@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070cef83deff0a946be1ebc5a4ed0453, type: 3}
-  m_Name: SOLevelsPool_Main
+  m_Script: {fileID: 11500000, guid: 2171e2f5c26f0914e9080e8d2e4143d6, type: 3}
+  m_Name: SODron
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 11400000, guid: 82143bb113437354482908bd60199bbc, type: 2}
-  - {fileID: 11400000, guid: c198c51f516596245bb9541faf174231, type: 2}
+  vida: 1
+  puntos: 20
+  timeBetweenShots: 3
+  proyectileSpeed: 5
+  tipoDeBala: 0

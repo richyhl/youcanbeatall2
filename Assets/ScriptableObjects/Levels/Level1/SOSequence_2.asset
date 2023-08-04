@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070cef83deff0a946be1ebc5a4ed0453, type: 3}
-  m_Name: SOLevelsPool_Main
+  m_Script: {fileID: 11500000, guid: b0d2d2a1411042e4f95744c0b34eb754, type: 3}
+  m_Name: SOSequence_2
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 11400000, guid: 82143bb113437354482908bd60199bbc, type: 2}
-  - {fileID: 11400000, guid: c198c51f516596245bb9541faf174231, type: 2}
+  waitTimeBetweenHordes: 5
+  hordes:
+  - {fileID: 11400000, guid: de4d629c95de52d4eaaa0edefdca91b6, type: 2}

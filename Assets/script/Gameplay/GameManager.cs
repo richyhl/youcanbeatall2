@@ -6,7 +6,11 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] AudioSource fxNegative;
+    [SerializeField] AudioSource bgm;
+    private bool allowInputs = false;
     private bool isGamePaused = false;
+    private bool canReturnToMainMenu = false;
     private int enemiesDestroyed = 0;
     private int score = 0;
 
@@ -29,6 +33,11 @@ public class GameManager : MonoBehaviour
         }
     }
     public static bool IsGamePaused => self.isGamePaused;
+    public static bool AllowInputs
+    {
+        get { return self.allowInputs; }
+        set { self.allowInputs = value; }
+    }
     #endregion
 
     private void Awake()
@@ -43,19 +52,21 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Score = 0;
+        PlayerPrefs.SetInt(PlayerPreferences.CURRENT_SCORE, 0);
+        allowInputs = true;
         playerCannon = GameObject.FindGameObjectWithTag(Tags.PLAYER).GetComponentInChildren<Cannon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isGamePaused && !MainGameUI.IsCountDownHappening)
+        if (!isGamePaused && !MainGameUI.IsCountDownHappening && allowInputs)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !playerCannon.IsShieldActive)
             {
                 playerCannon.ShootProyectile(TipoDeBala.Blanca);
             }
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && !playerCannon.IsShieldActive)
             {
                 playerCannon.ShootProyectile(TipoDeBala.Negra);
             }
@@ -72,18 +83,31 @@ public class GameManager : MonoBehaviour
                 playerCannon.ToggleShield(false);
             }
         }
+        if (canReturnToMainMenu && !fxNegative.isPlaying)
+        {
+            SceneManager.LoadScene(GameScenes.MAIN_MENU, LoadSceneMode.Single);
+        }
     }
 
     public void TogglePause()
     {
         isGamePaused = !isGamePaused;
         pauseMenuUI.SetActive(isGamePaused);
-        Time.timeScale = isGamePaused ? 0f : 1f;
+        if (isGamePaused)
+        {
+            Time.timeScale = 0f;
+            bgm.volume = bgm.volume / 2;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            bgm.volume = bgm.volume * 2;
+        }
     }
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(GameScenes.MAIN_MENU, LoadSceneMode.Single);
+        canReturnToMainMenu = true;
     }
 
     internal static void DroneKilled(int points)

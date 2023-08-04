@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d2d2a1411042e4f95744c0b34eb754, type: 3}
   m_Name: SOSequence_1
   m_EditorClassIdentifier: 
-  waitTimeBetweenHordes: 1
+  waitTimeBetweenHordes: 5
   hordes:
-  - {fileID: 11400000, guid: d0ca1de77996f2242b4e3707147179a9, type: 2}
-  - {fileID: 11400000, guid: 61f1e934ba99c694c8c0b078d031b97d, type: 2}
-  - {fileID: 11400000, guid: 9883efaddb08028438cff07049e3574a, type: 2}
+  - {fileID: 11400000, guid: 637a5643abf91f447b57d81420caf5b2, type: 2}
+  - {fileID: 11400000, guid: 107d347fc5d64324d889385e83b778ae, type: 2}
+  - {fileID: 11400000, guid: 0f44dbb1e6ac1794f915be817acf82f5, type: 2}

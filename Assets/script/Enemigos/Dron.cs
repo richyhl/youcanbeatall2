@@ -6,6 +6,8 @@ public class Dron : MonoBehaviour
     [SerializeField] private SODron sODron;
     [SerializeField] private GameObject prefabProyectile;
     [SerializeField] private Transform proyectileSpawnPoint;
+    [SerializeField] private AudioSource fxExplosion;
+    [SerializeField] private AudioSource fxShoot;
     public TipoDeBala BulletType => sODron.tipoDeBala;
 
     private int hitPoints;
@@ -39,6 +41,7 @@ public class Dron : MonoBehaviour
         hitPoints--;
         if (hitPoints == 0)
         {
+            fxExplosion.Play();
             animator.SetBool("explode", true);
             GameManager.DroneKilled(sODron.puntos);
             LevelManager.DroneKilled();
@@ -60,5 +63,6 @@ public class Dron : MonoBehaviour
         GameObject proyectile = Instantiate(prefabProyectile, proyectileSpawnPoint.position, Quaternion.identity);
         Proyectile mProyectile = proyectile.GetComponent<Proyectile>();
         mProyectile.LaunchProyectile(proyectileDirection);
+        fxShoot.Play();
     }
 }

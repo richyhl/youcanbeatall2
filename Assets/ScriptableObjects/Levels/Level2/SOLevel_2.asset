@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070cef83deff0a946be1ebc5a4ed0453, type: 3}
-  m_Name: SOLevelsPool_Main
+  m_Script: {fileID: 11500000, guid: 599712137b361324a80987867cd99bc4, type: 3}
+  m_Name: SOLevel_2
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 11400000, guid: 82143bb113437354482908bd60199bbc, type: 2}
-  - {fileID: 11400000, guid: c198c51f516596245bb9541faf174231, type: 2}
+  sequences:
+  - {fileID: 11400000, guid: 4e5ccc3bd0384644a83752da3b098c59, type: 2}

@@ -8,10 +8,9 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject highScoreGO;
     public TMP_Text highScoreText;
 
-    public AudioSource backgroundMusic;
-    public AudioSource fxStartGame;
     public AudioSource fxQuitGame;
 
+    bool canQuitGame = true;
     int highScore = 0;
     public int HighScore
     {
@@ -30,44 +29,26 @@ public class MenuPrincipal : MonoBehaviour
 
     private void Awake()
     {
-
-        #region Play background music.
-        if (backgroundMusic != null)
-        {
-            backgroundMusic.Play();
-        }
-        #endregion
-
         #region Check highscore.
         HighScore = PlayerPrefs.GetInt(PlayerPreferences.HIGH_SCORE);
         #endregion
     }
 
+    private void Update()
+    {
+        if (canQuitGame && !fxQuitGame.isPlaying)
+        {
+            Application.Quit();
+        }
+    }
+
     public void StartGame()
     {
-        StopBackgroundMusic();
-        if (fxStartGame != null)
-        {
-            fxStartGame.Play();
-        }
-        SceneManager.LoadScene(GameScenes.MAIN_GAME, LoadSceneMode.Single);
+        SceneManager.LoadScene(GameScenes.MAIN_GAME);
     }
 
     public void QuitGame()
     {
-        StopBackgroundMusic();
-        if (fxQuitGame != null)
-        {
-            fxQuitGame.Play();
-        }
-        Application.Quit();
-    }
-
-    private void StopBackgroundMusic()
-    {
-        if (backgroundMusic != null && backgroundMusic.isPlaying)
-        {
-            backgroundMusic.Stop();
-        }
+        canQuitGame = true;
     }
 }

@@ -17,6 +17,7 @@ public static class Tags
     public static readonly string WAYPOINT = "Waypoint";
     public static readonly string SHOOTABLE_ITEM = "ShootableItem";
     public static readonly string PLAYER = "Player";
+    public static readonly string SHIELD = "Shield";
 }
 
 public enum HordeType

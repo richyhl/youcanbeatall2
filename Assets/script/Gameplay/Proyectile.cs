@@ -28,17 +28,24 @@ public class Proyectile : MonoBehaviour
     {
         if (collision.tag == Tags.PLAYER && !isBulletFromPlayer)
         {
-
+            var playerCannon = GameObject.FindGameObjectWithTag(Tags.PLAYER).GetComponentInChildren<Cannon>();
+            playerCannon.Die();
+            StartCoroutine(SetProyectileHit());
         }
 
         if (collision.tag == Tags.SHOOTABLE_ITEM && isBulletFromPlayer)
         {
             Dron drone = collision.GetComponent<Dron>();
-            if (drone.BulletType == TipoDeBala.Indiferente ||
-                drone.BulletType == bulletType)
+            if (drone.BulletType == TipoDeBala.Indiferente || drone.BulletType == bulletType)
             {
-                StartCoroutine(SetProyectileHit(drone));
+                drone.TakeHit();
+                StartCoroutine(SetProyectileHit());
             }
+        }
+
+        if (collision.tag == Tags.SHIELD)
+        {
+            StartCoroutine(SetProyectileHit());
         }
     }
 
@@ -47,9 +54,8 @@ public class Proyectile : MonoBehaviour
         rigidBody2D.velocity = Direction * speed;
     }
 
-    private IEnumerator SetProyectileHit(Dron drone)
+    private IEnumerator SetProyectileHit()
     {
-        drone.TakeHit();
         spriteRenderer.sprite = BulletHit;
         rigidBody2D.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.25f);
