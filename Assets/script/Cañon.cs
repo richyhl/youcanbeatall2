@@ -6,8 +6,14 @@ public class Cañon : MonoBehaviour
     [SerializeField] private Proyectil proyectilprefab;
     [SerializeField, Range(1f, 20f)] private float rotationSpeed;
     [SerializeField] private Transform shootPosition;
+
+    /*public float ClipLeght = 1f;
+    public GameObject AudioClip;*/
+
     void Start()
     {
+
+        //AudioClip.SetActive(false);
         cam= Camera.main;
     }
 
@@ -22,6 +28,9 @@ public class Cañon : MonoBehaviour
         {
             Proyectil proyectile = Instantiate(proyectilprefab, shootPosition.position, transform.rotation);
             proyectile.LaunchProyectile(transform.up);
+            /*AudioClip.SetActive(true);
+            yield return new WaitForSeconds(ClipLeght);
+            AudioClip.SetActive(false);*/
         }
     }
 }
