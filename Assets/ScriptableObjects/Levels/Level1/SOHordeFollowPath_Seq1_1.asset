@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5d340a59b867e4699c96cfc778d221, type: 3}
   m_Name: SOHordeFollowPath_Seq1_1
   m_EditorClassIdentifier: 
-  waitTimeBetween: 5
-  enemyToSpawn: {fileID: 0}
-  amountOfEnemies: 1
-  pathToFollow: {fileID: 0}
+  waitTimeBetween: 2
+  enemyToSpawn: {fileID: 4780688609945802677, guid: eb018a341ead9e54abf7e3a074eefeeb, type: 3}
+  amountOfEnemies: 5
+  pathToFollow: {fileID: 4063873242512154691, guid: d1dad56ff0a29a54184c35672cecf950, type: 3}
+  isLoop: 1
+  waitTimeBetweenPoints: 1
+  speed: 2

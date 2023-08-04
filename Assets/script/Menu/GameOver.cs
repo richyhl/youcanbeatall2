@@ -27,6 +27,7 @@ public class GameOver : MonoBehaviour
                 scoreGO.SetActive(false);
                 newHighScoreGO.SetActive(true);
                 highScoreText.text = value.ToString();
+                PlayerPrefs.SetInt(PlayerPreferences.HIGH_SCORE, value);
             }
             else
             {
@@ -47,8 +48,9 @@ public class GameOver : MonoBehaviour
         }
         #endregion
 
-        #region Set curren score as final score.
+        #region Set current score as final score.
         FinalScore = PlayerPrefs.GetInt(PlayerPreferences.CURRENT_SCORE);
+        PlayerPrefs.SetInt(PlayerPreferences.CURRENT_SCORE, 0);
         #endregion
     }
 

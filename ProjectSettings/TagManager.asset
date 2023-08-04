@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bala
+  - Waypoint
+  - Spawn
+  - ShootableItem
+  - Shield
   layers:
   - Default
   - TransparentFX

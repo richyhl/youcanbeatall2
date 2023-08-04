@@ -4,5 +4,10 @@ using UnityEngine;
 public class SOSequence : ScriptableObject
 {
     public float waitTimeBetweenHordes = 5.0f;
-    public SOHorde[] levelSequences;
+    public SOHorde[] hordes;
+
+    public SOHorde this[int index]
+    {
+        get => hordes[index];
+    }
 }

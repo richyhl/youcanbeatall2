@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599712137b361324a80987867cd99bc4, type: 3}
   m_Name: SOLevel_1
   m_EditorClassIdentifier: 
-  isLoop: 1
-  levelSequences:
+  sequences:
   - {fileID: 11400000, guid: ecf5744e958fc674492db341e1f64eb2, type: 2}

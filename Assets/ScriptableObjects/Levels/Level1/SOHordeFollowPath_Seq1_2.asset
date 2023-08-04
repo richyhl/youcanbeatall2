@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5d340a59b867e4699c96cfc778d221, type: 3}
+  m_Name: SOHordeFollowPath_Seq1_2
+  m_EditorClassIdentifier: 
+  waitTimeBetween: 1
+  enemyToSpawn: {fileID: 4780688609945802677, guid: 4aa72ae7769a6b5448f8cc974dcff99c, type: 3}
+  amountOfEnemies: 3
+  pathToFollow: {fileID: 4063873242512154691, guid: 1d108a9ff3b63504bad2ce2aa6d40646, type: 3}
+  isLoop: 1
+  waitTimeBetweenPoints: 1
+  speed: 3
