@@ -14,9 +14,8 @@ public class Enemigo : MonoBehaviour
     public float tiempoCambioDireccion = 2f;
     private float tiempoSiguienteDisparo;
     private float tiempoSiguienteCambioDireccion;
-    private Vector2 limiteInferior;
-    private Vector2 limiteSuperior;
-    private Camera cam;
+
+   
     [SerializeField] private Animator anim;
 
     private void Start()
@@ -25,10 +24,8 @@ public class Enemigo : MonoBehaviour
         anim =GetComponent<Animator>();
         tiempoSiguienteDisparo = Time.time + tiempoEntreDisparos;
         tiempoSiguienteCambioDireccion = Time.time + tiempoCambioDireccion;
-        cam = Camera.main;
-        limiteInferior = cam.ViewportToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
-        limiteSuperior = cam.ViewportToWorldPoint(new Vector3(1, 1, cam.nearClipPlane));
-        MoverAleatoriamente();
+      
+        
     }
 
     void Update()
@@ -71,19 +68,7 @@ public class Enemigo : MonoBehaviour
 
         }
     }
-    void MoverAleatoriamente()
-    {
-        // Generar una fuerza aleatoria para el movimiento
-        Vector2 fuerzaMovimientoAleatoria = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * fuerzaMovimiento;
-
-        // Aplicar la fuerza al enemigo
-        rbEnemigo.AddForce(fuerzaMovimientoAleatoria, ForceMode2D.Impulse);
-
-        Vector2 posicion = transform.position;
-        posicion.x = Mathf.Clamp(posicion.x, limiteInferior.x, limiteSuperior.x);
-        posicion.y = Mathf.Clamp(posicion.y, limiteInferior.y, limiteSuperior.y);
-        transform.position = posicion;
-    }
+  
 
 
 

@@ -9,6 +9,7 @@ TagManager:
   - Spawn
   - ShootableItem
   - Shield
+  - Escudo
   layers:
   - Default
   - TransparentFX
