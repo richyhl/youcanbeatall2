@@ -60,7 +60,9 @@ public class Dron : MonoBehaviour
     {
         Transform playerGOTransform = GameObject.FindGameObjectWithTag(Tags.PLAYER).transform;
         Vector3 proyectileDirection = (playerGOTransform.position - proyectileSpawnPoint.position).normalized;
-        GameObject proyectile = Instantiate(prefabProyectile, proyectileSpawnPoint.position, Quaternion.identity);
+        var angleRad = Mathf.Atan(proyectileDirection.x/proyectileDirection.y);
+        float angleDeg = angleRad * (float)(180.0 / Mathf.PI);
+        GameObject proyectile = Instantiate(prefabProyectile, proyectileSpawnPoint.position, Quaternion.Euler(0.0f, 0.0f, angleDeg * -1));
         Proyectile mProyectile = proyectile.GetComponent<Proyectile>();
         mProyectile.LaunchProyectile(proyectileDirection);
         fxShoot.Play();

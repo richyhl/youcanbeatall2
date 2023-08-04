@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Proyectil : MonoBehaviour
@@ -9,7 +7,7 @@ public class Proyectil : MonoBehaviour
     [SerializeField] private float destroyDeay = 10f;
     private void Awake()
     {
-        proyectilRb= GetComponent<Rigidbody2D>();
+        proyectilRb = GetComponent<Rigidbody2D>();
     }
 
     public void LaunchProyectile(Vector2 Direction)
