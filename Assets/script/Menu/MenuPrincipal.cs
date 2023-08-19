@@ -10,7 +10,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public AudioSource fxQuitGame;
 
-    bool canQuitGame = true;
+    bool canQuitGame = false;
     int highScore = 0;
     public int HighScore
     {
